@@ -1,0 +1,11 @@
+{
+  "name": "coinbot",
+  "version": "1.0.0",
+  "description": "Crypto Trading Bot API",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Dave and Mike",
+  "license": "ISC"
+}
