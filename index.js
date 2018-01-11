@@ -1,14 +1,18 @@
-const http = require('http');
+var express = require('express'),
+    app = express(),
+    port = process.env.PORT || 3400;
 
-const hostname = '127.0.0.1';
-const port = 3300;
+bodyParser = require('body-parser');
 
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    res.end('This is our trading bots.');
-});
 
-server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
-});
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+
+var routes = require('./api/routes/botRoutes'); //importing route
+routes(app); //register the route
+
+
+app.listen(port);
+
+console.log('CoinBot API Started On: ' + port);

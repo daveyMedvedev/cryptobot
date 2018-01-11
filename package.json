@@ -4,8 +4,16 @@
   "description": "Crypto Trading Bot API",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "nodemon index.js"
   },
   "author": "Dave and Mike",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "ccxt": "^1.10.634",
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.11"
+  }
 }
