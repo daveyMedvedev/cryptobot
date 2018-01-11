@@ -2,10 +2,12 @@
 module.exports = function (app) {
     var bot = require('../controllers/botController');
 
-    // todoList Routes
+    //get binance portfolio
+    app.route('/getBalance')
+        .get(bot.getBalance)
+
+    // binance get ticker prices route
     app.route('/binance')
-        .get(bot.list_all_binance)
-
-
+        .get(bot.getPrices)
 
 };
